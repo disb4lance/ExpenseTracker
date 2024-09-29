@@ -8,7 +8,7 @@ namespace Shared.DataTransferObject
 {
     public class CategoryDto
     {
-        Guid Id { get; set; }
+        public Guid Id { get; set; }
 
         public string? Name { get; set; }
     }
