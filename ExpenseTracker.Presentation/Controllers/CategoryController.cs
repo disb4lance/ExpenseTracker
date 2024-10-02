@@ -10,8 +10,13 @@ using System.Threading.Tasks;
 
 namespace ExpenseTracker.Presentation.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiExplorerSettings(GroupName = "v1")]
+
+    [ApiController]
     public class CategoryController : ControllerBase
     {
+
         private readonly IServiceManager _service;
         public CategoryController(IServiceManager service)
         {
@@ -39,11 +44,11 @@ namespace ExpenseTracker.Presentation.Controllers
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
         [ProducesResponseType(422)]
-       // [ServiceFilter(typeof(ValidationFilterAttribute))]
+        //[ServiceFilter(typeof(ValidationFilterAttribute))]
         public async Task<IActionResult> CreateCategory([FromBody] CategoryForCreationDto category)
         {
             var createdCategory = await _service.CategoryService.CreateCategoryAsync(category);
-            return CreatedAtRoute("CompanyById", new { id = createdCategory.Id }, createdCategory);
+            return CreatedAtRoute("CategoryById", new { id = createdCategory.Id }, createdCategory);
         }
 
         //[HttpGet("collection/({ids})", Name = "CategoryCollection")]

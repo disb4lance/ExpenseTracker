@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ExpenseTracker.Presentation</name>
+    </assembly>
+    <members>
+        <member name="M:ExpenseTracker.Presentation.Controllers.CategoryController.GetCompaniesOptions">
+            <summary>
+            Get Company Options
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
